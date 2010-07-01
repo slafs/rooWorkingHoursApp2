@@ -1,0 +1,50 @@
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-01 16:46:27
+project --topLevelPackage umk.net.slafs
+persistence setup --provider HIBERNATE --database POSTGRES 
+entity --class ~.domain.Faza
+field string --fieldName name --column nazwa --notNull 
+hint
+controller scaffold --class umk.net.slafs.web.FazaController --entity umk.net.slafs.domain.Faza
+hint eclipse
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-01 16:51:59
+hint
+perform eclipse
+perform package
+database properties list
+database properties set --key database.password --value postgres
+database properties set --key database.user --value postgres
+database properties set --key database.name --value roo2
+database properties list
+database properties set --key database.username --value postgres
+database properties list
+database properties remove database.user
+database properties list
+database properties set --key database.url --value jdbc:postgresql://localhost:5432/${database.name}
+database properties list
+hint
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-01 17:21:22
+// [failed] controller scaffold --class umk.net.slafs.web.FazaController --entity umk.net.slafs.domain.Faza
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-01 17:22:49
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-01 17:24:24
+project --topLevelPackage umk.net.slafs
+persistence setup --provider HIBERNATE --database POSTGRES
+entity --class ~.domain.Faza
+field string --fieldName name --column nazwa --notNull
+hint
+controller scaffold --class umk.net.slafs.web.FazaController --entity umk.net.slafs.domain.Faza
+hint eclipse
+hint
+perform eclipse
+perform package
+database properties list
+database properties set --key database.password --value postgres
+database properties set --key database.user --value postgres
+database properties set --key database.name --value roo2
+database properties list
+database properties set --key database.username --value postgres
+database properties list
+database properties remove database.user
+database properties list
+database properties set --key database.url --value jdbc:postgresql://localhost:5432/${database.name}
+database properties list
+hint
