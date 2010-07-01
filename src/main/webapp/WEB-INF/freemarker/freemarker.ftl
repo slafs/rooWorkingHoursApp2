@@ -3,5 +3,7 @@
 zażółć gęślą jaźń
 <#assign test = "1">
 
+
 <p>${test}</p>
+<p>${hello}</p>
 </div>

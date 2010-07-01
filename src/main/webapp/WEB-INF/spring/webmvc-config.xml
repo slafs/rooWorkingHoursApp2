@@ -32,6 +32,8 @@
 	<bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
 		<property name="definitions">
 			<list>
+				<value>/WEB-INF/freemarker/layouts.xml</value>
+			
 				<value>/WEB-INF/layouts/layouts.xml</value>
 				<!-- Scan views directory for Tiles configurations -->
 				<value>/WEB-INF/views/**/views.xml</value>
@@ -41,9 +43,9 @@
 	
 <!--	FREEMARKER START-->
 <!-- freemarker config -->
-	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-	  <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
-	</bean>
+<!--	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+<!--	  <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>-->
+<!--	</bean>-->
 	
 	<!-- 
 	
@@ -51,11 +53,11 @@
 	  different view resolving based on Locale, you have to use the resource bundle resolver.
 	
 	-->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-	  <property name="cache" value="true"/>
-	  <property name="prefix" value=""/>
-	  <property name="suffix" value=".ftl"/>
-	</bean>
+<!--	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+<!--	  <property name="cache" value="true"/>-->
+<!--	  <property name="prefix" value=""/>-->
+<!--	  <property name="suffix" value=".ftl"/>-->
+<!--	</bean>-->
 <!--	FREEMARKER STOP-->
 
 	<!-- Resolves localized messages*.properties and application.properties files in the application to	allow for internationalization. 
