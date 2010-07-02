@@ -4,9 +4,14 @@
     <definition extends="default" name="faza/list">
         <put-attribute name="body" value="/WEB-INF/views/faza/list.jspx"/>
     </definition>
+<!--    <definition extends="default" name="faza/show">-->
+<!--        <put-attribute name="body" value="/WEB-INF/views/faza/show.jspx"/>-->
+<!--    </definition>-->
+
     <definition extends="default" name="faza/show">
-        <put-attribute name="body" value="/WEB-INF/views/faza/show.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/freemarker/faza/show.ftl"/>
     </definition>
+
     <definition extends="default" name="faza/create">
         <put-attribute name="body" value="/WEB-INF/views/faza/create.jspx"/>
     </definition>
