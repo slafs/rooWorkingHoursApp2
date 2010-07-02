@@ -16,6 +16,7 @@
                         <th>Started</th>
                         <th>Description</th>
                         <th>Term</th>
+                        <th>Default Faza</th>
                         <th/>
                         <th/>
                         <th/>
@@ -38,6 +39,9 @@
                         </td>
                         <td>
                             <fmt:formatDate pattern="${projekt_term_date_format}" value="${projekt.term}"/>
+                        </td>
+                        <td>
+                            <c:out value="${fn:substring(projekt.defaultFaza, 0, 10)}"/>
                         </td>
                         <td>
                             <spring:url value="/projekt/${projekt.id}" var="show_form_url"/>
@@ -72,7 +76,7 @@
                     </tr>
                 </c:forEach>
                 <tr class="footer">
-                    <td colspan="9">
+                    <td colspan="10">
                         <span class="new">
                             <spring:url value="/projekt/form" var="create_url"/>
                             <a href="${create_url}">

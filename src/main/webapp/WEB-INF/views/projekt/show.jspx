@@ -41,6 +41,13 @@
                 </div>
             </div>
             <br/>
+            <div id="roo_projekt_defaultFaza">
+                <label for="_defaultFaza_id">Default Faza:</label>
+                <div class="box" id="_defaultFaza_id">
+                    <c:out value="${projekt.defaultFaza}"/>
+                </div>
+            </div>
+            <br/>
         </c:if>
         <c:if test="${empty projekt}">
             <spring:message arguments="${entity_label}" code="entity.not.found.single"/>

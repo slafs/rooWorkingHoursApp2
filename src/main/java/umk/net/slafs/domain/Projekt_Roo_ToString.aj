@@ -12,7 +12,8 @@ privileged aspect Projekt_Roo_ToString {
         sb.append("Client: ").append(getClient()).append(", ");
         sb.append("Started: ").append(getStarted()).append(", ");
         sb.append("Description: ").append(getDescription()).append(", ");
-        sb.append("Term: ").append(getTerm());
+        sb.append("Term: ").append(getTerm()).append(", ");
+        sb.append("DefaultFaza: ").append(getDefaultFaza());
         return sb.toString();
     }
     

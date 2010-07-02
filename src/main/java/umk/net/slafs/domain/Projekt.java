@@ -11,6 +11,9 @@ import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
+import umk.net.slafs.domain.Faza;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 
 @Entity
 @RooJavaBean
@@ -39,4 +42,8 @@ public class Projekt {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
     private Date term;
+
+    @ManyToOne(targetEntity = Faza.class)
+    @JoinColumn
+    private Faza defaultFaza;
 }

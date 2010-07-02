@@ -79,3 +79,5 @@ field string --fieldName authority  --class umk.net.slafs.domain.Pracownik --not
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 23:27:18
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 23:27:44
 field reference --class umk.net.slafs.domain.Developer --fieldName projekt --type umk.net.slafs.domain.Projekt --cardinality MANY_TO_ONE 
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 23:42:15
+field reference --fieldName defaultFaza --type umk.net.slafs.domain.Faza --class umk.net.slafs.domain.Projekt --cardinality MANY_TO_ONE

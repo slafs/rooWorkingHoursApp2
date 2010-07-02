@@ -2,6 +2,7 @@ package umk.net.slafs.domain;
 
 import java.lang.String;
 import java.util.Date;
+import umk.net.slafs.domain.Faza;
 
 privileged aspect Projekt_Roo_JavaBean {
     
@@ -43,6 +44,14 @@ privileged aspect Projekt_Roo_JavaBean {
     
     public void Projekt.setTerm(Date term) {
         this.term = term;
+    }
+    
+    public Faza Projekt.getDefaultFaza() {
+        return this.defaultFaza;
+    }
+    
+    public void Projekt.setDefaultFaza(Faza defaultFaza) {
+        this.defaultFaza = defaultFaza;
     }
     
 }

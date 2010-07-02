@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import umk.net.slafs.domain.Faza;
 import umk.net.slafs.domain.Projekt;
 
 privileged aspect ProjektController_Roo_Controller {
@@ -18,6 +19,7 @@ privileged aspect ProjektController_Roo_Controller {
         if (projekt == null) throw new IllegalArgumentException("A projekt is required");
         if (result.hasErrors()) {
             modelMap.addAttribute("projekt", projekt);
+            modelMap.addAttribute("fazas", Faza.findAllFazas());
             modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "projekt/create";
@@ -29,6 +31,7 @@ privileged aspect ProjektController_Roo_Controller {
     @RequestMapping(value = "/projekt/form", method = RequestMethod.GET)
     public String ProjektController.createForm(ModelMap modelMap) {
         modelMap.addAttribute("projekt", new Projekt());
+        modelMap.addAttribute("fazas", Faza.findAllFazas());
         modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "projekt/create";
@@ -63,6 +66,7 @@ privileged aspect ProjektController_Roo_Controller {
         if (projekt == null) throw new IllegalArgumentException("A projekt is required");
         if (result.hasErrors()) {
             modelMap.addAttribute("projekt", projekt);
+            modelMap.addAttribute("fazas", Faza.findAllFazas());
             modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "projekt/update";
@@ -75,6 +79,7 @@ privileged aspect ProjektController_Roo_Controller {
     public String ProjektController.updateForm(@PathVariable("id") Long id, ModelMap modelMap) {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
         modelMap.addAttribute("projekt", Projekt.findProjekt(id));
+        modelMap.addAttribute("fazas", Faza.findAllFazas());
         modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "projekt/update";
