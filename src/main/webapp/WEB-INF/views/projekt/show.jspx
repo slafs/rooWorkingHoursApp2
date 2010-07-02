@@ -1,0 +1,49 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <script type="text/javascript">dojo.require('dijit.TitlePane');</script>
+    <div id="_title_div">
+        <spring:message code="label.projekt" var="entity_label"/>
+        <spring:message arguments="${entity_label}" code="entity.show" var="title_msg"/>
+        <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
+        <c:if test="${not empty projekt}">
+            <div id="roo_projekt_name">
+                <label for="_name_id">Name:</label>
+                <div class="box" id="_name_id">
+                    <c:out value="${projekt.name}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_projekt_client">
+                <label for="_client_id">Client:</label>
+                <div class="box" id="_client_id">
+                    <c:out value="${projekt.client}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_projekt_started">
+                <label for="_started_id">Started:</label>
+                <div class="box" id="_started_id">
+                    <fmt:formatDate pattern="${projekt_started_date_format}" value="${projekt.started}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_projekt_description">
+                <label for="_description_id">Description:</label>
+                <div class="box" id="_description_id">
+                    <c:out value="${projekt.description}"/>
+                </div>
+            </div>
+            <br/>
+            <div id="roo_projekt_term">
+                <label for="_term_id">Term:</label>
+                <div class="box" id="_term_id">
+                    <fmt:formatDate pattern="${projekt_term_date_format}" value="${projekt.term}"/>
+                </div>
+            </div>
+            <br/>
+        </c:if>
+        <c:if test="${empty projekt}">
+            <spring:message arguments="${entity_label}" code="entity.not.found.single"/>
+        </c:if>
+    </div>
+</div>

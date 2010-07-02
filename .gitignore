@@ -1,4 +1,4 @@
 .*
 !.gitignore
 target
-application.log
+application.log*

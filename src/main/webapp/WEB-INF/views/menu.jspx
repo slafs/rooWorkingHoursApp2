@@ -23,5 +23,89 @@
                 </li>
             </ul>
         </li>
+    <li id="web_mvc_jsp_projekt_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_projekt_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_projekt_menu_item">
+                    <spring:url value="/projekt/form" var="web_mvc_jsp_create_projekt_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_projekt_menu_item_url}">
+                        <spring:message code="label.projekt" var="label_projekt"/>
+                        <spring:message arguments="${label_projekt}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_projekt_menu_item">
+                    <spring:url value="/projekt?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_projekt_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_projekt_menu_item_url}">
+                        <spring:message code="label.projekts" var="label_projekts"/>
+                        <spring:message arguments="${label_projekts}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    <li id="web_mvc_jsp_pracownik_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_pracownik_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_pracownik_menu_item">
+                    <spring:url value="/pracownik/form" var="web_mvc_jsp_create_pracownik_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_pracownik_menu_item_url}">
+                        <spring:message code="label.pracownik" var="label_pracownik"/>
+                        <spring:message arguments="${label_pracownik}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_pracownik_menu_item">
+                    <spring:url value="/pracownik?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_pracownik_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_pracownik_menu_item_url}">
+                        <spring:message code="label.pracowniks" var="label_pracowniks"/>
+                        <spring:message arguments="${label_pracowniks}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    <li id="web_mvc_jsp_developer_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_developer_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_developer_menu_item">
+                    <spring:url value="/developer/form" var="web_mvc_jsp_create_developer_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_developer_menu_item_url}">
+                        <spring:message code="label.developer" var="label_developer"/>
+                        <spring:message arguments="${label_developer}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_developer_menu_item">
+                    <spring:url value="/developer?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_developer_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_developer_menu_item_url}">
+                        <spring:message code="label.developers" var="label_developers"/>
+                        <spring:message arguments="${label_developers}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    <li id="web_mvc_jsp_godziny_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_godziny_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_godziny_menu_item">
+                    <spring:url value="/godziny/form" var="web_mvc_jsp_create_godziny_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_godziny_menu_item_url}">
+                        <spring:message code="label.godziny" var="label_godziny"/>
+                        <spring:message arguments="${label_godziny}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_godziny_menu_item">
+                    <spring:url value="/godziny?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_godziny_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_godziny_menu_item_url}">
+                        <spring:message code="label.godzinys" var="label_godzinys"/>
+                        <spring:message arguments="${label_godzinys}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>

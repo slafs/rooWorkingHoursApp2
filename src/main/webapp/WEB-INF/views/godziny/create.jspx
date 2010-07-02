@@ -1,0 +1,62 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <script type="text/javascript">dojo.require('dijit.TitlePane');dojo.require('dijit.form.FilteringSelect');dojo.require('dijit.form.DateTextBox');</script>
+    <div id="_title_div">
+        <spring:message code="label.godziny" var="entity_label"/>
+        <spring:message arguments="${entity_label}" code="entity.create" var="title_msg"/>
+        <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
+        <spring:url value="/godziny" var="form_url"/>
+        <form:form action="${form_url}" method="POST" modelAttribute="godziny">
+            <form:errors cssClass="errors" delimiter="&lt;p/&gt;"/>
+            <div id="roo_godziny_pracownik">
+                <c:if test="${not empty pracowniks}">
+                    <label for="_pracownik_id">Pracownik:</label>
+                    <form:select cssStyle="width:250px" id="_pracownik_id" path="pracownik">
+                        <form:options itemValue="id" items="${pracowniks}"/>
+                    </form:select>
+                    <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_pracownik_id', widgetType: 'dijit.form.FilteringSelect', widgetAttrs : {hasDownArrow : true}})); </script>
+                </c:if>
+            </div>
+            <br/>
+            <div id="roo_godziny_hours">
+                <label for="_hours_id">Hours:</label>
+                <form:input cssStyle="width:250px" id="_hours_id" maxlength="30" path="hours" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_hours_error_id" path="hours"/>
+                <spring:message code="field.invalid.integer" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="Hours," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_hours_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', regExp: '-?[0-9]*', required : false}})); </script>
+            </div>
+            <br/>
+            <div id="roo_godziny_minutes">
+                <label for="_minutes_id">Minutes:</label>
+                <form:input cssStyle="width:250px" id="_minutes_id" maxlength="30" path="minutes" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_minutes_error_id" path="minutes"/>
+                <spring:message code="field.invalid.integer" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="Minutes," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_minutes_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', regExp: '-?[0-9]*', required : false}})); </script>
+            </div>
+            <br/>
+            <div id="roo_godziny_whenWorked">
+                <label for="_whenWorked_id">When Worked:</label>
+                <form:input cssStyle="width:250px" id="_whenWorked_id" maxlength="30" path="whenWorked" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_whenWorked_error_id" path="whenWorked"/>
+                <spring:message arguments="When Worked" code="field.invalid" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="When Worked," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_whenWorked_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_whenWorked_id', widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: '${field_validation}', constraints: {datePattern : '${godziny_whenWorked_date_format}', required : false}, datePattern : '${godziny_whenWorked_date_format}'}})); </script>
+            </div>
+            <br/>
+            <div class="submit" id="roo_godziny_submit">
+                <spring:message code="button.save" var="save_button"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>
+                <input id="proceed" type="submit" value="${save_button}"/>
+            </div>
+        </form:form>
+    </div>
+</div>

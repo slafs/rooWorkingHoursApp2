@@ -48,3 +48,34 @@ database properties list
 database properties set --key database.url --value jdbc:postgresql://localhost:5432/${database.name}
 database properties list
 hint
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 22:47:29
+entity --class umk.net.slafs.domain.Projekt
+field string --fieldName name --column nazwa --notNull --comment "Nazwa projektu" --sizeMax 255
+field string --fieldName client --column klient --comment "Kogo dotyczy dany projekt"
+field date --fieldName started --type java.util.Date --column kiedy_rozp --notNull --persistenceType JPA_DATE --comment "Kiedy rozpoczeto projekt"
+field string --fieldName description --column opis --comment "Opis projektu"
+field date --fieldName term --column termin --comment "Planowany termin zakonczenia projektu" --type java.util.Date
+entity --class umk.net.slafs.domain.Pracownik
+field string --fieldName firstname --column imie
+field string --fieldName surname --column nazwisko
+field string --fieldName email
+entity --class umk.net.slafs.domain.Developer
+field reference --class umk.net.slafs.domain.Developer --fieldName pracownik --type umk.net.slafs.domain.Pracownik --cardinality ONE_TO_MANY
+entity --class umk.net.slafs.domain.Godziny
+field reference --fieldName pracownik --type umk.net.slafs.domain.Pracownik
+field number --fieldName hours --column godzin --type java.lang.Integer
+field number --fieldName minutes --column minut --type java.lang.Integer
+field date --fieldName whenWorked --column kiedy --type java.util.Date --comment "Dzien ktorego dotyczy wpis"
+controller scaffold --class ~.web.ProjektController --entity umk.net.slafs.domain.Projekt
+controller scaffold --class ~.web.PracownikController --entity umk.net.slafs.domain.Pracownik
+controller scaffold --class ~.web.DeveloperController --entity umk.net.slafs.domain.Developer
+controller scaffold --class ~.web.GodzinyController --entity umk.net.slafs.domain.Godziny
+finder list --class umk.net.slafs.domain.Godziny --depth 2
+perform eclipse
+field string --fieldName username --class umk.net.slafs.domain.Pracownik --sizeMax 50 --notNull
+field string --fieldName password --class umk.net.slafs.domain.Pracownik --sizeMax 255 --notNull
+field boolean --fieldName enabled  --class umk.net.slafs.domain.Pracownik
+field string --fieldName authority  --class umk.net.slafs.domain.Pracownik --notNull
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 23:27:18
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-02 23:27:44
+field reference --class umk.net.slafs.domain.Developer --fieldName projekt --type umk.net.slafs.domain.Projekt --cardinality MANY_TO_ONE 
