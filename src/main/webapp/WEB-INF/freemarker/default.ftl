@@ -6,6 +6,7 @@
 </head>
 <body>
 <p>raz</p>
+<@tiles.insertAttribute name="menu" ignore="true" />   
 
 <@tiles.insertAttribute name="body" />
 

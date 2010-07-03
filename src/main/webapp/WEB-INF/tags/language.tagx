@@ -19,6 +19,7 @@
     	<a href="${url_en}" title="${lang_en}"><img src="${img_en}" alt="${lang_en}"/></a>
     	<c:out value=" "/>
 
+		<!-- 
     	<spring:url var="img_de" value="/static/images/de.png" />
     	<spring:url var="url_de" value="">
     		<spring:param name="lang" value="de" />
@@ -87,6 +88,23 @@
     	</spring:url>	
     	<spring:message code="global.language.switch" arguments="Nederlandse" var="lang_nl"/>
     	<a href="${url_nl}" title="${lang_nl}"><img src="${img_nl}" alt="${lang_nl}"/></a>
+
+		-->
+		<c:out value=" "/>
+		
+		<spring:url var="img_pl" value="/static/images/pl.png" />
+    	<spring:url var="url_pl" value="">
+    		<spring:param name="lang" value="pl" />
+			<c:if test="${not empty param.page}">
+   				<spring:param name="page" value="${param.page}" />
+    		</c:if>
+    		<c:if test="${not empty param.size}">
+    			<spring:param name="size" value="${param.size}" />
+    		</c:if>	    		
+    	</spring:url>	
+    	<spring:message code="global.language.switch" arguments="Polski" var="lang_pl"/>
+    	<a href="${url_pl}" title="${lang_pl}"><img src="${img_pl}" alt="${lang_pl}"/></a>
+
     	
     </span>
     

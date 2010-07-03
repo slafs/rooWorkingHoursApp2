@@ -11,6 +11,8 @@ import javax.persistence.Column;
 import java.util.Date;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -23,14 +25,17 @@ public class Godziny {
     @JoinColumn
     private Pracownik pracownik;
 
+    @NotNull
     @Column(name = "godzin")
     private Integer hours;
 
+    @NotNull
     @Column(name = "minut")
     private Integer minutes;
 
     @Column(name = "kiedy")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "S-")
+    @NotNull
     private Date whenWorked;
 }
