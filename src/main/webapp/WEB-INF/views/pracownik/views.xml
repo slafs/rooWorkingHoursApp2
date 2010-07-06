@@ -2,15 +2,19 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
     <definition extends="default" name="pracownik/list">
-        <put-attribute name="body" value="/WEB-INF/views/pracownik/list.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/pracownik/list.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/pracownik/list.ftl"/>
     </definition>
     <definition extends="default" name="pracownik/show">
-        <put-attribute name="body" value="/WEB-INF/views/pracownik/show.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/pracownik/show.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/pracownik/show.ftl"/>
     </definition>
     <definition extends="default" name="pracownik/create">
-        <put-attribute name="body" value="/WEB-INF/views/pracownik/create.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/pracownik/create.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/pracownik/create.ftl"/>
     </definition>
     <definition extends="default" name="pracownik/update">
-        <put-attribute name="body" value="/WEB-INF/views/pracownik/update.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/pracownik/update.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/pracownik/update.ftl"/>
     </definition>
 </tiles-definitions>

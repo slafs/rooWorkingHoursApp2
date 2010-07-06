@@ -2,11 +2,24 @@
 
 <div>
 
+<@spring.message code="start" var="start"/>
+<@spring.message code="term" var="term"/>
+<@spring.message code="forwho" var="forwho"/>
+<@spring.message code="description" var="projdesc"/>
+<div>
 <h2><@spring.message code="label.projekt" /></h2>
 
 <#escape x as x?html>
 	<h3>${projekt.id} - ${projekt.name}</h3>
+	<#if 1 < projekt.client?length> <h4>${forwho} ${projekt.client}</h4></#if>
+	${start}: ${projekt.started}<br/>
+	<#if projekt.term??>
+		 ${term}: ${projekt.term}<br/>
+	</#if>
+	<#if 1 < projekt.description?length><br/>${projdesc}:<br/>${projekt.description}<br/></#if>
+	<p />
 </#escape>
+</div>
 
 <@spring.url value="/projekt/${projekt.id}/form" var="update_url"/>
 <@spring.message code="label.projekt" var="entity_label"/>

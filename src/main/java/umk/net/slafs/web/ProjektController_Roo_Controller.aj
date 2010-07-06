@@ -20,8 +20,8 @@ privileged aspect ProjektController_Roo_Controller {
         if (result.hasErrors()) {
             modelMap.addAttribute("projekt", projekt);
             modelMap.addAttribute("fazas", Faza.findAllFazas());
-            modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-            modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "projekt/create";
         }
         projekt.persist();
@@ -32,16 +32,16 @@ privileged aspect ProjektController_Roo_Controller {
     public String ProjektController.createForm(ModelMap modelMap) {
         modelMap.addAttribute("projekt", new Projekt());
         modelMap.addAttribute("fazas", Faza.findAllFazas());
-        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "projekt/create";
     }
     
     @RequestMapping(value = "/projekt/{id}", method = RequestMethod.GET)
     public String ProjektController.show(@PathVariable("id") Long id, ModelMap modelMap) {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
-        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         modelMap.addAttribute("projekt", Projekt.findProjekt(id));
         return "projekt/show";
     }
@@ -56,8 +56,8 @@ privileged aspect ProjektController_Roo_Controller {
         } else {
             modelMap.addAttribute("projekts", Projekt.findAllProjekts());
         }
-        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "projekt/list";
     }
     
@@ -67,8 +67,8 @@ privileged aspect ProjektController_Roo_Controller {
         if (result.hasErrors()) {
             modelMap.addAttribute("projekt", projekt);
             modelMap.addAttribute("fazas", Faza.findAllFazas());
-            modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-            modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "projekt/update";
         }
         projekt.merge();
@@ -80,8 +80,8 @@ privileged aspect ProjektController_Roo_Controller {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
         modelMap.addAttribute("projekt", Projekt.findProjekt(id));
         modelMap.addAttribute("fazas", Faza.findAllFazas());
-        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
-        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_term_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("projekt_started_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "projekt/update";
     }
     

@@ -1,19 +1,22 @@
 package umk.net.slafs.domain;
 
-import javax.persistence.Entity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.entity.RooEntity;
-import javax.validation.constraints.NotNull;
-import javax.persistence.Column;
-import javax.validation.constraints.Size;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.format.annotation.DateTimeFormat;
-import umk.net.slafs.domain.Faza;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @Entity
 @RooJavaBean
@@ -27,20 +30,21 @@ public class Projekt {
     private String name;
 
     @Column(name = "klient")
+    @Size(max = 255)
     private String client;
 
     @NotNull
     @Column(name = "kiedy_rozp")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(style = "S-")
+    @DateTimeFormat(style = "M-",iso = ISO.DATE)
     private Date started;
 
     @Column(name = "opis")
     private String description;
 
     @Column(name = "termin")
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "S-")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(style = "M-",iso = ISO.DATE)
     private Date term;
 
     @ManyToOne(targetEntity = Faza.class)

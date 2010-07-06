@@ -23,7 +23,7 @@
 </ul>
 <ul>
 	<h2>
-		<!-- Fazy pracy -->
+		<!-- Projekty -->
 		<@spring.message code="menu.category.web_mvc_jsp_projekt_category.label"/>
 	</h2>
 	<li>
@@ -39,6 +39,26 @@
 		<!-- Przeglądaj projekty -->
 		<@spring.message code="label.projekts" var="label_projekts"/>
 		<@spring.message arguments="${label_projekts}" code="global.menu.list"/>
+	</a></li>
+</ul>
+<ul>
+	<h2>
+		<!-- pracowniky -->
+		<@spring.message code="menu.category.web_mvc_jsp_pracownik_category.label"/>
+	</h2>
+	<li>
+	<@spring.url value="/pracownik/form" var="create_pracownik_url"/>
+	<a href="${create_pracownik_url}">
+		<!-- Stwórz nowy pracownik -->
+		<@spring.message code="label.pracownik" var="label_pracownik"/>
+        <@spring.message arguments="${label_pracownik}" code="global.menu.new"/>			
+	</a></li>
+	<li>
+	<@spring.url value="/pracownik" var="list_pracownik_url"/>
+	<a href="${list_pracownik_url}">
+		<!-- Przeglądaj pracowniky -->
+		<@spring.message code="label.pracowniks" var="label_pracowniks"/>
+		<@spring.message arguments="${label_pracowniks}" code="global.menu.list"/>
 	</a></li>
 </ul>
 

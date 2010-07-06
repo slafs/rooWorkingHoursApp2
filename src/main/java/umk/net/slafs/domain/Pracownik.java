@@ -1,25 +1,31 @@
 package umk.net.slafs.domain;
 
-import javax.persistence.Entity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.roo.addon.entity.RooEntity;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @Entity
 @RooJavaBean
 @RooToString
 @RooEntity
+@UniqueConstraint(columnNames = { "username", "email" })
 public class Pracownik {
 
     @Column(name = "imie")
+    @Size(max = 50)
     private String firstname;
 
     @Column(name = "nazwisko")
+    @Size(max = 50)
     private String surname;
-
+    
     private String email;
 
     @NotNull
@@ -33,5 +39,6 @@ public class Pracownik {
     private Boolean enabled;
 
     @NotNull
+    @Size(max = 50)
     private String authority;
 }
