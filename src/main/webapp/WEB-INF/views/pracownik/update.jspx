@@ -10,24 +10,18 @@
             <form:errors cssClass="errors" delimiter="&lt;p/&gt;"/>
             <div id="roo_pracownik_firstname">
                 <label for="_firstname_id">Firstname:</label>
-                <form:input cssStyle="width:250px" id="_firstname_id" maxlength="30" path="firstname" size="0"/>
+                <form:textarea cssStyle="width:250px" id="_firstname_id" path="firstname"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_firstname_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
                 <br/>
                 <form:errors cssClass="errors" id="_firstname_error_id" path="firstname"/>
-                <spring:message arguments="Firstname" code="field.invalid" var="field_invalid"/>
-                <spring:message code="field.required" var="field_required"/>
-                <spring:message argumentSeparator="," arguments="Firstname," code="field.simple.validation" var="field_validation"/>
-                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_firstname_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
             </div>
             <br/>
             <div id="roo_pracownik_surname">
                 <label for="_surname_id">Surname:</label>
-                <form:input cssStyle="width:250px" id="_surname_id" maxlength="30" path="surname" size="0"/>
+                <form:textarea cssStyle="width:250px" id="_surname_id" path="surname"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_surname_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
                 <br/>
                 <form:errors cssClass="errors" id="_surname_error_id" path="surname"/>
-                <spring:message arguments="Surname" code="field.invalid" var="field_invalid"/>
-                <spring:message code="field.required" var="field_required"/>
-                <spring:message argumentSeparator="," arguments="Surname," code="field.simple.validation" var="field_validation"/>
-                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_surname_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
             </div>
             <br/>
             <div id="roo_pracownik_email">
@@ -64,13 +58,10 @@
             <br/>
             <div id="roo_pracownik_authority">
                 <label for="_authority_id">Authority:</label>
-                <form:input cssStyle="width:250px" id="_authority_id" maxlength="30" path="authority" size="0"/>
+                <form:textarea cssStyle="width:250px" id="_authority_id" path="authority"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_authority_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
                 <br/>
                 <form:errors cssClass="errors" id="_authority_error_id" path="authority"/>
-                <spring:message arguments="Authority" code="field.invalid" var="field_invalid"/>
-                <spring:message code="field.required" var="field_required"/>
-                <spring:message argumentSeparator="," arguments="Authority,(${field_required})" code="field.simple.validation" var="field_validation"/>
-                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_authority_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : true}})); </script>
             </div>
             <br/>
             <div class="submit" id="roo_pracownik_submit">

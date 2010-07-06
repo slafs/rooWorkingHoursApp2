@@ -60,7 +60,7 @@
 	</div>
     <br/>
     <div>
-		<@spring.message code="button.save" var="submit_label"/>
+		<@spring.message code="button.update" var="submit_label"/>
 		<input type="submit" value="${submit_label}" />
 	    <@form.hidden id="_id_id" path="id"/>
 	    <@form.hidden id="_version_id" path="version"/>

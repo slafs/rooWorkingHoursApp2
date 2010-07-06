@@ -18,13 +18,10 @@
             <br/>
             <div id="roo_projekt_client">
                 <label for="_client_id">Client:</label>
-                <form:input cssStyle="width:250px" id="_client_id" maxlength="30" path="client" size="0"/>
+                <form:textarea cssStyle="width:250px" id="_client_id" path="client"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_client_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
                 <br/>
                 <form:errors cssClass="errors" id="_client_error_id" path="client"/>
-                <spring:message arguments="Client" code="field.invalid" var="field_invalid"/>
-                <spring:message code="field.required" var="field_required"/>
-                <spring:message argumentSeparator="," arguments="Client," code="field.simple.validation" var="field_validation"/>
-                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_client_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
             </div>
             <br/>
             <div id="roo_projekt_started">

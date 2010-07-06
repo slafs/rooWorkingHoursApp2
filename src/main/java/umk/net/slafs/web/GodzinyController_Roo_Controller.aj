@@ -20,7 +20,7 @@ privileged aspect GodzinyController_Roo_Controller {
         if (result.hasErrors()) {
             modelMap.addAttribute("godziny", godziny);
             modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
-            modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "godziny/create";
         }
         godziny.persist();
@@ -31,14 +31,14 @@ privileged aspect GodzinyController_Roo_Controller {
     public String GodzinyController.createForm(ModelMap modelMap) {
         modelMap.addAttribute("godziny", new Godziny());
         modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
-        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "godziny/create";
     }
     
     @RequestMapping(value = "/godziny/{id}", method = RequestMethod.GET)
     public String GodzinyController.show(@PathVariable("id") Long id, ModelMap modelMap) {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
-        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         modelMap.addAttribute("godziny", Godziny.findGodziny(id));
         return "godziny/show";
     }
@@ -53,7 +53,7 @@ privileged aspect GodzinyController_Roo_Controller {
         } else {
             modelMap.addAttribute("godzinys", Godziny.findAllGodzinys());
         }
-        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "godziny/list";
     }
     
@@ -63,7 +63,7 @@ privileged aspect GodzinyController_Roo_Controller {
         if (result.hasErrors()) {
             modelMap.addAttribute("godziny", godziny);
             modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
-            modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+            modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "godziny/update";
         }
         godziny.merge();
@@ -75,7 +75,7 @@ privileged aspect GodzinyController_Roo_Controller {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
         modelMap.addAttribute("godziny", Godziny.findGodziny(id));
         modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
-        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("S-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
+        modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "godziny/update";
     }
     

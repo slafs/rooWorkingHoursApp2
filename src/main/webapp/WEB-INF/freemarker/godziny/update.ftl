@@ -3,12 +3,12 @@
 
 <div>
 
-<@spring.url value="/projekt/${projekt.id}" var="form_url"/>
-<@spring.message code="label.projekt" var="label_projekt"/>
+<@spring.url value="/godziny/${godziny.id}" var="form_url"/>
+<@spring.message code="label.godziny" var="label_godziny"/>
 
-<h2><@spring.message arguments="${label_projekt}" code="entity.update"/> </h2>			
+<h2><@spring.message arguments="${label_godziny}" code="entity.update"/> </h2>			
 
-<@form.form action="${form_url}" method="PUT" commandName="projekt">
+<@form.form action="${form_url}" method="PUT" commandName="godziny">
     <@form.errors cssClass="errors" delimiter="&lt;p/&gt;"/>
 	<div>
 		<@spring.message code="name" var="name_label"/>
