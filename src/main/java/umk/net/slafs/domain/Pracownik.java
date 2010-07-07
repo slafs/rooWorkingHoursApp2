@@ -41,4 +41,11 @@ public class Pracownik {
     @NotNull
     @Size(max = 50)
     private String authority;
+    
+    public boolean isAdmin() {
+    	if (this.authority.equals("ADMIN")) {
+    		return true;
+    	}
+    	return false;
+    }
 }

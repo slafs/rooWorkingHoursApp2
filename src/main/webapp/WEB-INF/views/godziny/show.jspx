@@ -34,6 +34,13 @@
                 </div>
             </div>
             <br/>
+            <div id="roo_godziny_projekt">
+                <label for="_projekt_id">Projekt:</label>
+                <div class="box" id="_projekt_id">
+                    <c:out value="${godziny.projekt}"/>
+                </div>
+            </div>
+            <br/>
         </c:if>
         <c:if test="${empty godziny}">
             <spring:message arguments="${entity_label}" code="entity.not.found.single"/>

@@ -11,18 +11,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import umk.net.slafs.domain.Godziny;
 import umk.net.slafs.domain.Pracownik;
+import umk.net.slafs.domain.Projekt;
 
 privileged aspect GodzinyController_Roo_Controller {
     
+	public Pracownik GodzinyController.getCurrentPracownik() {
+		return Pracownik.findPracownik(new Long(14));
+	}
+	
     @RequestMapping(value = "/godziny", method = RequestMethod.POST)
     public String GodzinyController.create(@Valid Godziny godziny, BindingResult result, ModelMap modelMap) {
         if (godziny == null) throw new IllegalArgumentException("A godziny is required");
         if (result.hasErrors()) {
             modelMap.addAttribute("godziny", godziny);
             modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
+            modelMap.addAttribute("projekts", Projekt.findAllProjekts());
             modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "godziny/create";
         }
+        Pracownik currentPrac = getCurrentPracownik();
+        godziny.setPracownik(currentPrac);
         godziny.persist();
         return "redirect:/godziny/" + godziny.getId();
     }
@@ -31,6 +39,7 @@ privileged aspect GodzinyController_Roo_Controller {
     public String GodzinyController.createForm(ModelMap modelMap) {
         modelMap.addAttribute("godziny", new Godziny());
         modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
+        modelMap.addAttribute("projekts", Projekt.findAllProjekts());
         modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "godziny/create";
     }
@@ -63,9 +72,13 @@ privileged aspect GodzinyController_Roo_Controller {
         if (result.hasErrors()) {
             modelMap.addAttribute("godziny", godziny);
             modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
+            modelMap.addAttribute("projekts", Projekt.findAllProjekts());
             modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
             return "godziny/update";
         }
+        Pracownik currentPrac = getCurrentPracownik();
+        godziny.setPracownik(currentPrac);
+
         godziny.merge();
         return "redirect:/godziny/" + godziny.getId();
     }
@@ -75,6 +88,7 @@ privileged aspect GodzinyController_Roo_Controller {
         if (id == null) throw new IllegalArgumentException("An Identifier is required");
         modelMap.addAttribute("godziny", Godziny.findGodziny(id));
         modelMap.addAttribute("pracowniks", Pracownik.findAllPracowniks());
+        modelMap.addAttribute("projekts", Projekt.findAllProjekts());
         modelMap.addAttribute("godziny_whenWorked_date_format", org.joda.time.format.DateTimeFormat.patternForStyle("M-", org.springframework.context.i18n.LocaleContextHolder.getLocale()));
         return "godziny/update";
     }

@@ -3,6 +3,7 @@ package umk.net.slafs.domain;
 import java.lang.Integer;
 import java.util.Date;
 import umk.net.slafs.domain.Pracownik;
+import umk.net.slafs.domain.Projekt;
 
 privileged aspect Godziny_Roo_JavaBean {
     
@@ -36,6 +37,14 @@ privileged aspect Godziny_Roo_JavaBean {
     
     public void Godziny.setWhenWorked(Date whenWorked) {
         this.whenWorked = whenWorked;
+    }
+    
+    public Projekt Godziny.getProjekt() {
+        return this.projekt;
+    }
+    
+    public void Godziny.setProjekt(Projekt projekt) {
+        this.projekt = projekt;
     }
     
 }

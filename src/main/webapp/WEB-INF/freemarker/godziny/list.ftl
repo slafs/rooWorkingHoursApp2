@@ -40,7 +40,12 @@
 					<#list godzinys as godziny>
 						<tr>
 							<#escape x as x?html>
-								<td>${godziny.id}</td><td>${godziny.name}</td>
+								<td>${godziny.id}</td>
+								<td>${godziny.pracownik.username}</td>
+								<td>${godziny.whenWorked}</td>
+								<td>${godziny.projekt.name}</td>
+								<td>${godziny.hours}</td>
+								<td>${godziny.minutes}</td>
 							</#escape>  
                             <@spring.url value="/godziny/${godziny.id}/form" var="update_form_url"/>
                             <@spring.url value="/static/images/update.png" var="update_image_url"/>							

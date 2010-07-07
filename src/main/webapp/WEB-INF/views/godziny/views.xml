@@ -6,12 +6,15 @@
         <put-attribute name="body" value="/WEB-INF/freemarker/godziny/list.ftl"/>
     </definition>
     <definition extends="default" name="godziny/show">
-        <put-attribute name="body" value="/WEB-INF/views/godziny/show.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/godziny/show.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/godziny/show.ftl"/>
     </definition>
     <definition extends="default" name="godziny/create">
-        <put-attribute name="body" value="/WEB-INF/views/godziny/create.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/godziny/create.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/godziny/create.ftl"/>
     </definition>
     <definition extends="default" name="godziny/update">
-        <put-attribute name="body" value="/WEB-INF/views/godziny/update.jspx"/>
+<!--        <put-attribute name="body" value="/WEB-INF/views/godziny/update.jspx"/>-->
+        <put-attribute name="body" value="/WEB-INF/freemarker/godziny/update.ftl"/>
     </definition>
 </tiles-definitions>

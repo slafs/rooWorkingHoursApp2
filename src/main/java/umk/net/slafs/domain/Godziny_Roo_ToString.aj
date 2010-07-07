@@ -11,7 +11,8 @@ privileged aspect Godziny_Roo_ToString {
         sb.append("Pracownik: ").append(getPracownik()).append(", ");
         sb.append("Hours: ").append(getHours()).append(", ");
         sb.append("Minutes: ").append(getMinutes()).append(", ");
-        sb.append("WhenWorked: ").append(getWhenWorked());
+        sb.append("WhenWorked: ").append(getWhenWorked()).append(", ");
+        sb.append("Projekt: ").append(getProjekt());
         return sb.toString();
     }
     

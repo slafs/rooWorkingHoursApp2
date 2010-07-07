@@ -15,6 +15,7 @@
                         <th>Hours</th>
                         <th>Minutes</th>
                         <th>When Worked</th>
+                        <th>Projekt</th>
                         <th/>
                         <th/>
                         <th/>
@@ -34,6 +35,9 @@
                         </td>
                         <td>
                             <fmt:formatDate pattern="${godziny_whenWorked_date_format}" value="${godziny.whenWorked}"/>
+                        </td>
+                        <td>
+                            <c:out value="${fn:substring(godziny.projekt, 0, 10)}"/>
                         </td>
                         <td>
                             <spring:url value="/godziny/${godziny.id}" var="show_form_url"/>
@@ -68,7 +72,7 @@
                     </tr>
                 </c:forEach>
                 <tr class="footer">
-                    <td colspan="8">
+                    <td colspan="9">
                         <span class="new">
                             <spring:url value="/godziny/form" var="create_url"/>
                             <a href="${create_url}">

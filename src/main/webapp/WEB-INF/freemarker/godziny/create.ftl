@@ -11,51 +11,48 @@
 <@form.form action="${form_url}" method="POST" commandName="godziny">
     <@form.errors cssClass="errors" delimiter="&lt;p/&gt;"/>
 	<div>
-		<@spring.message code="name" var="name_label"/>
-		<@form.errors cssClass="errors" id="_name_error_id" path="name"/>
-		<label for="_name_id">${name_label}:</label>
-		<@form.input path="name" id="_name_id" maxlength="255" size="0" />
-	</div>
-	<br/>
-	<div>
-		<@spring.message code="client" var="client_label"/>
-		<@form.errors cssClass="errors" id="_name_error_id" path="client"/>
-		<label for="_client_id">${client_label}:</label>
-		<@form.input path="client" id="_client_id" maxlength="255" size="0" />
-	</div>
-	<br/>
-	<div>
-		<@spring.message code="start" var="start_label"/>
-		<@form.errors cssClass="errors" id="_start_error_id" path="started"/>
-		<label for="_client_id">${start_label}:</label>
-		<@form.input cssClass="datefield" path="started" id="_start_id" maxlength="30" size="0" />
-	</div>
-    <br/>
-	<div>
-		<@spring.message code="term" var="term_label"/>
-		<@form.errors cssClass="errors" id="_term_error_id" path="term"/>
-		<label for="_term_id">${term_label}:</label>
-		<@form.input cssClass="datefield" path="term" id="_term_id" maxlength="30" size="0" />
-	</div>
-	<br/>
-	<div>
-		<@spring.message code="description" var="desc_label"/>
-		<@form.errors cssClass="errors" id="_desc_error_id" path="description"/>
-		<label for="_desc_id">${desc_label}:</label>
-		<@form.textarea path="description" id="_desc_id" size="0" />
-	</div>
-	<div>
-		<@spring.message code="default_faza" var="def_faz_label"/>
-		<@form.errors cssClass="errors" id="_defaultFaza_errors_id" path="defaultFaza"/>
-		<label for="_defaultFaza_id">${def_faz_label}:</label>
-		<@form.select cssStyle="width:250px" id="_defaultFaza_id" path="defaultFaza">
-			<#list fazas as faza>
-				<@form.option value="${faza.id}" label="${faza.name}"/>
+		<@spring.message code="label.pracownik" var="pracownik_label"/>
+		<@form.errors cssClass="errors" id="_pracownik_errors_id" path="pracownik"/>
+		<label for="_pracownik_id">${pracownik_label}:</label>
+		<@form.select cssStyle="width:250px" id="_pracownik_id" path="pracownik">
+			<#list pracowniks as pracownik>
+				<@form.option value="${pracownik.id}" label="${pracownik.username}"/>
 			</#list>
 	    </@form.select>
-	</div>	
-	
-    <br/>
+	</div>
+	<br/>
+	<div>
+		<@spring.message code="label.projekt" var="projekt_label"/>
+		<@form.errors cssClass="errors" id="_projekt_errors_id" path="projekt"/>
+		<label for="_projekt_id">${projekt_label}:</label>
+		<@form.select cssStyle="width:250px" id="_projekt_id" path="projekt">
+			<#list projekts as projekt>
+				<@form.option value="${projekt.id}" label="${projekt.name}"/>
+			</#list>
+	    </@form.select>
+	</div>
+	<br/>
+	<div>
+		<@spring.message code="when" var="when_label"/>
+		<@form.errors cssClass="errors" id="_when_error_id" path="whenWorked"/>
+		<label for="_when_id">${when_label}:</label>
+		<@form.input cssClass="datefield" path="whenWorked" id="_when_id" maxlength="30" size="0" />
+	</div>
+	<br/>
+	<div>
+		<table class="hoursandminutes"><tr><td>
+		<@spring.message code="hours" var="hours_label"/>
+		<@form.errors cssClass="errors" id="_hours_error_id" path="hours"/>
+		<label for="_client_id">${hours_label}:</label>
+		<@form.input path="hours" id="_hours_id" maxlength="2" size="0" />
+		</td><td>
+		<@spring.message code="minutes" var="minutes_label"/>
+		<@form.errors cssClass="errors" id="_minutes_error_id" path="minutes"/>
+		<label for="_minutes_id">${minutes_label}:</label>
+		<@form.input path="minutes" id="_minutes_id" maxlength="2" size="0" />
+		</td></tr></table>
+	</div>
+	<br/>
     <div>
 		<@spring.message code="button.save" var="submit_label"/>
 		<input type="submit" value="${submit_label}" />
