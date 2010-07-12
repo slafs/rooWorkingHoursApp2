@@ -83,3 +83,8 @@ field reference --class umk.net.slafs.domain.Developer --fieldName projekt --typ
 field reference --fieldName defaultFaza --type umk.net.slafs.domain.Faza --class umk.net.slafs.domain.Projekt --cardinality MANY_TO_ONE
 // Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-06 15:56:08
 field reference --fieldName projekt --type umk.net.slafs.domain.Projekt --class umk.net.slafs.domain.Godziny --notNull --cardinality MANY_TO_ONE
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-07 23:56:14
+finder list --class umk.net.slafs.domain.Godziny
+finder add --finderName findGodzinysByPracownik --class umk.net.slafs.domain.Godziny
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-08 00:01:44
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-07-08 00:01:57

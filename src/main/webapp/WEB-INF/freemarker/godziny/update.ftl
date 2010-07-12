@@ -11,17 +11,6 @@
 <@form.form action="${form_url}" method="PUT" commandName="godziny">
     <@form.errors cssClass="errors" delimiter="&lt;p/&gt;"/>
 	<div>
-		<@spring.message code="label.pracownik" var="pracownik_label"/>
-		<@form.errors cssClass="errors" id="_pracownik_errors_id" path="pracownik"/>
-		<label for="_pracownik_id">${pracownik_label}:</label>
-		<@form.select cssStyle="width:250px" id="_pracownik_id" path="pracownik">
-			<#list pracowniks as pracownik>
-				<@form.option value="${pracownik.id}" label="${pracownik.username}"/>
-			</#list>
-	    </@form.select>
-	</div>
-	<br/>
-	<div>
 		<@spring.message code="label.projekt" var="projekt_label"/>
 		<@form.errors cssClass="errors" id="_projekt_errors_id" path="projekt"/>
 		<label for="_projekt_id">${projekt_label}:</label>

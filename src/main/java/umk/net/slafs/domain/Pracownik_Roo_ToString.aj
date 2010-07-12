@@ -6,6 +6,7 @@ privileged aspect Pracownik_Roo_ToString {
     
     public String Pracownik.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Admin: ").append(isAdmin()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Version: ").append(getVersion()).append(", ");
         sb.append("Firstname: ").append(getFirstname()).append(", ");

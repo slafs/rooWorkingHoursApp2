@@ -20,12 +20,12 @@ import umk.net.slafs.domain.Projekt;
 @Entity
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooEntity(finders = { "findGodzinysByPracownik" })
 public class Godziny {
 
     @ManyToOne(targetEntity = Pracownik.class)
     @JoinColumn
-    @NotNull
+//    @NotNull
     private Pracownik pracownik;
 
     @NotNull
@@ -41,7 +41,7 @@ public class Godziny {
 
     @Column(name = "kiedy")
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "S-", iso=ISO.DATE)
+    @DateTimeFormat(style = "S-", iso = ISO.DATE)
     @NotNull
     private Date whenWorked;
 
