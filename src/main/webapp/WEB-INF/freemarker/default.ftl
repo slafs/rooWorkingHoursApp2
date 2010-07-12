@@ -2,7 +2,12 @@
 <#assign spring=JspTaglibs['/WEB-INF/tlds/spring.tld']>
 <#assign sec=JspTaglibs['/WEB-INF/tlds/spring-security.tld']>
 
+<@spring.url  value="/static/images/add.png" var="dp_img_path" />
 <@spring.url  value="/static/styles/style.css" var="styles_url" />
+<@spring.url  value="/static/js/jquery-1.4.2.min.js" var="jq_url" />
+<@spring.url  value="/static/js/myjs/my.js" var="my_js_url" />
+<@spring.url  value="/static/js/jq-ui/css/smoothness/jquery-ui-1.8.2.custom.css" var="jq_ui_css_url" />
+<@spring.url  value="/static/js/jq-ui/js/jquery-ui-1.8.2.custom.min.js" var="jq_ui_url" />
 <@spring.url  value="/" var="main_url" />
 <@spring.url  value="/j_spring_security_logout" var="logout_url" />
 <@spring.message code="application.name" var="appname"/>
@@ -17,6 +22,14 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>${appname}</title>
 <link href="${styles_url}" rel="stylesheet" type="text/css" media="screen" />
+<link type="text/css" href="${jq_ui_css_url}" rel="stylesheet" />	
+<script type="text/javascript" src="${jq_url}"></script>
+<script type="text/javascript" src="${jq_ui_url}"></script>
+<script type="text/javascript">
+	var datepicker_image_path = "${dp_img_path}";
+</script>
+<script type="text/javascript" src="${my_js_url}"></script>
+
 </head>
 <body>
 <div id="wrapper">
