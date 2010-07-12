@@ -6,9 +6,14 @@
 </head>
 <body>
 <p>raz</p>
-<@tiles.insertAttribute name="menu" ignore="true" />   
 
-<@tiles.insertAttribute name="body" />
+<div width="200px">
+	<@tiles.insertAttribute name="menu" />   
+</div>
+<div style="clear:both;" />
+<div style="float:right;">
+	<@tiles.insertAttribute name="body" />
+</div>
 
 <p>dwa</p>
 </body>
