@@ -3,9 +3,9 @@ package umk.net.slafs.web;
 import java.util.List;
 
 import javax.validation.Valid;
-import javax.persistence.Query;
 
-
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,8 +20,8 @@ import umk.net.slafs.domain.Projekt;
 privileged aspect GodzinyController_Roo_Controller {
 	
 	public Pracownik GodzinyController.getCurrentPracownik() {
-		
-		return Pracownik.findPracownik(new Long(14));
+		User u = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return Pracownik.findPracownikByUsername(u.getUsername());
 	}
 	
 	

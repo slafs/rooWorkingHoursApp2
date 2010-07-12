@@ -3,6 +3,18 @@
 
 <urlrewrite default-match-type="wildcard">
 	<rule>
+		<from>/spring_security_login</from>
+		<to>/spring_security_login</to>
+	</rule>
+	<rule>
+		<from>/j_spring_security_check</from>
+		<to>/j_spring_security_check</to>
+	</rule>
+	<rule>
+		<from>/j_spring_security_logout</from>
+		<to>/j_spring_security_logout</to>
+	</rule>
+	<rule>
 		<from>/resources/**</from>
 		<to last="true">/resources/$1</to>
 	</rule>

@@ -93,6 +93,11 @@ privileged aspect Pracownik_Roo_Entity {
         return entityManager().find(Pracownik.class, id);
     }
     
+    public static Pracownik Pracownik.findPracownikByUsername(String username) {
+        if (username == null) return null;
+        return (Pracownik) entityManager().createQuery("from Pracownik o where username = :username").setParameter("username", username).getSingleResult();
+    }
+    
     public static List<Pracownik> Pracownik.findPracownikEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("select o from Pracownik o").setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }

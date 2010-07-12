@@ -15,7 +15,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooEntity
-@UniqueConstraint(columnNames = { "username", "email" })
+@UniqueConstraint(columnNames = { "username" })
 public class Pracownik {
 
     @Column(name = "imie")

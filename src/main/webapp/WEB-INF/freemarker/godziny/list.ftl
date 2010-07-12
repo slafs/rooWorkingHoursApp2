@@ -1,8 +1,6 @@
 <#assign form=JspTaglibs['/WEB-INF/tlds/spring-form.tld']>
 <#assign spring=JspTaglibs['/WEB-INF/tlds/spring.tld']>
-<div>
-	<p>Zażółć gęślą jaźń</p>
-</div>
+
 <div>
 <#if godzinys??>
 	    <div id="_title_div">

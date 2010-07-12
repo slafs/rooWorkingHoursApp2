@@ -8,15 +8,18 @@
 	<definition name="fdefault" template="/WEB-INF/freemarker/default.ftl" />
 
 	 <definition name="default" template="/WEB-INF/freemarker/default.ftl">
-<!--		<put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />-->
 		<put-attribute name="menu" value="/WEB-INF/freemarker/menu.ftl" />
 	</definition>
 	
 	<definition name="public" template="/WEB-INF/layouts/default.jspx" />
 	
+	<definition name="login" extends="default">
+		<put-attribute name="body" value="/WEB-INF/freemarker/login.ftl" />
+	</definition>
 
 	<definition name="ftest" extends="fdefault">
 		<put-attribute name="body" value="/WEB-INF/freemarker/freemarker.ftl" />
 	</definition>
+	
 	
 </tiles-definitions>
