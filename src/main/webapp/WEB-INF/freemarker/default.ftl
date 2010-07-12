@@ -28,15 +28,14 @@
 			</div>
 			<div id="menu">
 				<span>
-					<@sec.authorize ifNotGranted="ROLE_USER">
+					<@sec.authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
 						<a href="${main_url}">login</a>
 					</@sec.authorize>
 				</span>
 				<span>
-					<@sec.authorize ifAnyGranted="ROLE_USER">
+					<@sec.authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
 						${hello} <@sec.authentication property="principal.username" />,
-					</@sec.authorize>
-					<@sec.authorize ifAnyGranted="ROLE_USER">
+					
 						<a href="${logout_url}">${logout}</a>
 					</@sec.authorize>
 				</span>

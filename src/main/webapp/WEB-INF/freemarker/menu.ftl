@@ -2,6 +2,31 @@
 <#assign sec=JspTaglibs['/WEB-INF/tlds/spring-security.tld']>
 
 <ul>
+<@sec.authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
+	
+	<li>
+		<h2>
+			<!-- godziny -->
+			<@spring.message code="menu.category.web_mvc_jsp_godziny_category.label"/>
+		</h2><ul>
+		<li>
+		<@spring.url value="/godziny/form" var="create_godziny_url"/>
+		<a href="${create_godziny_url}">
+			<!-- Stwórz nową godzinę -->
+			<@spring.message code="label.godziny" var="label_godziny"/>
+	        <@spring.message arguments="${label_godziny}" code="global.menu.new"/>			
+		</a></li>
+		<li>
+		<@spring.url value="/godziny" var="list_godziny_url"/>
+		<a href="${list_godziny_url}">
+			<!-- Przeglądaj godziny -->
+			<@spring.message code="label.godzinys" var="label_godzinys"/>
+			<@spring.message arguments="${label_godzinys}" code="global.menu.list"/>
+		</a></li>
+	</ul></li>
+</@sec.authorize>
+
+
 	<@sec.authorize ifAnyGranted="ROLE_ADMIN">
 
 	<li>
@@ -82,29 +107,6 @@
 			<!-- Przeglądaj developerów -->
 			<@spring.message code="label.developers" var="label_developers"/>
 			<@spring.message arguments="${label_developers}" code="global.menu.list"/>
-		</a></li>
-	</ul></li>
-</@sec.authorize>
-<@sec.authorize ifAnyGranted="ROLE_USER">
-	
-	<li>
-		<h2>
-			<!-- godziny -->
-			<@spring.message code="menu.category.web_mvc_jsp_godziny_category.label"/>
-		</h2><ul>
-		<li>
-		<@spring.url value="/godziny/form" var="create_godziny_url"/>
-		<a href="${create_godziny_url}">
-			<!-- Stwórz nową godzinę -->
-			<@spring.message code="label.godziny" var="label_godziny"/>
-	        <@spring.message arguments="${label_godziny}" code="global.menu.new"/>			
-		</a></li>
-		<li>
-		<@spring.url value="/godziny" var="list_godziny_url"/>
-		<a href="${list_godziny_url}">
-			<!-- Przeglądaj godziny -->
-			<@spring.message code="label.godzinys" var="label_godzinys"/>
-			<@spring.message arguments="${label_godzinys}" code="global.menu.list"/>
 		</a></li>
 	</ul></li>
 </@sec.authorize>
