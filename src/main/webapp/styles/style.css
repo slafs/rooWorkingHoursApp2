@@ -34,14 +34,14 @@ label {
 	float:left;
 	margin-left: 5px;
 	margin-top: 0px;
+	font-weight: bold;
 }
 
-input {
-	height:20px;
-}
 
 input, textarea, select {
 	border:1px solid #B3B3B3;
+	margin: 1px;
+	padding: 2px;
 }
 
 input.image {
@@ -528,4 +528,12 @@ a:hover {
 	font-weight: bold;
 	display: block;
 	margin-left: 105px;
+}
+
+.noborder {
+	border-style: none;
+}
+
+.noborder td {
+	border-style: none;
 }

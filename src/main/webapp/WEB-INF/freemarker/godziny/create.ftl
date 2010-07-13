@@ -29,7 +29,7 @@
 	</div>
 	<br/>
 	<div>
-		<table class="hoursandminutes"><tr><td>
+		<table class="noborder"><tr><td>
 		<@spring.message code="hours" var="hours_label"/>
 		<@form.errors cssClass="errors" id="_hours_error_id" path="hours"/>
 		<label for="_client_id">${hours_label}:</label>

@@ -25,6 +25,7 @@
 <link type="text/css" href="${jq_ui_css_url}" rel="stylesheet" />	
 <script type="text/javascript" src="${jq_url}"></script>
 <script type="text/javascript" src="${jq_ui_url}"></script>
+
 <script type="text/javascript">
 	var datepicker_image_path = "${dp_img_path}";
 </script>
