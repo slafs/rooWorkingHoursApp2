@@ -8,6 +8,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import umk.net.slafs.domain.Godziny;
 import umk.net.slafs.domain.Pracownik;
 import umk.net.slafs.domain.Projekt;
+import umk.net.slafs.domain.validators.GodzinyValidator;
 
 privileged aspect GodzinyController_Roo_Controller {
 	
@@ -24,6 +27,11 @@ privileged aspect GodzinyController_Roo_Controller {
 		return Pracownik.findPracownikByUsername(u.getUsername());
 	}
 	
+	@InitBinder
+    public void GodzinyController.initBinder(WebDataBinder binder) {
+        binder.setValidator(new GodzinyValidator());
+    }
+
 	
     @RequestMapping(value = "/godziny", method = RequestMethod.POST)
     public String GodzinyController.create(@Valid Godziny godziny, BindingResult result, ModelMap modelMap) {
