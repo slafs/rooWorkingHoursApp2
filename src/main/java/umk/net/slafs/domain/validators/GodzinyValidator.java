@@ -6,7 +6,7 @@ import org.springframework.validation.Validator;
 import umk.net.slafs.domain.Godziny;
 
 public class GodzinyValidator implements Validator {
-
+	
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return Godziny.class.equals(clazz);
@@ -18,6 +18,13 @@ public class GodzinyValidator implements Validator {
 		if (g.getHours() > 90) {
 			errors.rejectValue("hours", "error.toobigvalue");
 		}
+		
+		if (g.isFuture()) {
+			errors.rejectValue("whenWorked", "error.futuredate");
+		}
+		
+		if (!g.isEditable()) {
+			errors.rejectValue("whenWorked", "error.tooolddate", new Object [] {Godziny.DAYS_BACK}, "");
+		}
 	}
-
 }

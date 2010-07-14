@@ -53,7 +53,11 @@
                             <@spring.url value="/static/images/show.png" var="show_image_url"/>							
                             <@spring.url value="/godziny/${godziny.id}" var="delete_form_url"/>
                             <@spring.url value="/static/images/delete.png" var="delete_image_url"/>							
-							<td><a href="${update_form_url}"><img title="${edit_label}" src="${update_image_url}"/></a></td>
+							<td>
+							<#if godziny.isEditable()>
+								<a href="${update_form_url}"><img title="${edit_label}" src="${update_image_url}"/></a>
+							</#if>
+							</td>
 							<td><a href="${show_url}"><img title="${show_label}" src="${show_image_url}"/></a></td>
 							
 							<td>

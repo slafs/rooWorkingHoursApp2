@@ -1,5 +1,6 @@
 package umk.net.slafs.domain;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,9 +24,11 @@ import umk.net.slafs.domain.Projekt;
 @RooEntity(finders = { "findGodzinysByPracownik" })
 public class Godziny {
 
+	public final static int DAYS_BACK = 3;
+	private final static Long DAY = new Long(1000 * 60 * 60 * 24);
+	
     @ManyToOne(targetEntity = Pracownik.class)
     @JoinColumn
-//    @NotNull
     private Pracownik pracownik;
 
     @NotNull
@@ -49,4 +52,27 @@ public class Godziny {
     @ManyToOne(targetEntity = Projekt.class)
     @JoinColumn
     private Projekt projekt;
+
+    public boolean isEditable() {
+		Calendar c = Calendar.getInstance();
+
+		Date d1 = this.getWhenWorked();
+		Date d2 = c.getTime();
+		
+		Long r = d2.getTime() - d1.getTime();
+		
+		return  !((r / (double) DAY) > DAYS_BACK);
+    }
+    
+    public boolean isFuture() {
+		Calendar c = Calendar.getInstance();
+
+		Date d1 = this.getWhenWorked();
+		Date d2 = c.getTime();
+		
+		Long r = d2.getTime() - d1.getTime();
+		
+		return  (r / (double) DAY) < 0;
+    	
+    }
 }

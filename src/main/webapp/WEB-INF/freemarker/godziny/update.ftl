@@ -3,7 +3,7 @@
 
 <div>
 
-<@spring.url value="/godziny/{godziny.id}" var="form_url"/>
+<@spring.url value="/godziny/${godziny.id}" var="form_url"/>
 <@spring.message code="label.godziny" var="label_godziny"/>
 
 <h2><@spring.message arguments="${label_godziny}" code="entity.update"/> </h2>			
