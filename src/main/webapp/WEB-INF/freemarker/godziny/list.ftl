@@ -42,7 +42,7 @@
 							<#escape x as x?html>
 								<td>${godziny.id}</td>
 								<td>${godziny.pracownik.username}</td>
-								<td>${godziny.whenWorked}</td>
+								<td>${godziny.whenWorked?date}</td>
 								<td>${godziny.projekt.name}</td>
 								<td>${godziny.hours}</td>
 								<td>${godziny.minutes}</td>

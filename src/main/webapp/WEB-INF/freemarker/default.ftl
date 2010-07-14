@@ -39,8 +39,28 @@
 			<div id="logo">
 				<h1><a href="${main_url}">${appname}</a></h1>
 				<p>${appdesc}</p>
+		
+		<br /> 
+    	<p><@spring.message code="global.language" />:
+    	<span>
+    	<@spring.url var="url_en" value="">
+			<@spring.param name="lang" value="en" />
+    	</@spring.url>	
+    	<@spring.url var="img_en" value="/static/images/gb.png" />    	
+    	<@spring.message code="global.language.switch" arguments="English" var="lang_en"/>
+    	<a href="${url_en}" title="${lang_en}"><img src="${img_en}" alt="${lang_en}"/></a>
+
+     	<@spring.url var="url_pl" value="">
+			<@spring.param name="lang" value="pl" />
+    	</@spring.url>	
+    	<@spring.url var="img_pl" value="/static/images/pl.png" />    	
+    	<@spring.message code="global.language.switch" arguments="Polski" var="lang_pl"/>
+    	<a href="${url_pl}" title="${lang_pl}"><img src="${img_pl}" alt="${lang_pl}"/></a>
+    </span></p>
+				
 			</div>
 			<div id="menu">
+			
 				<span>
 					<@sec.authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
 						<a href="${main_url}">login</a>
@@ -165,7 +185,7 @@
 	<!-- end #page -->
 </div>
 <div id="footer">
-	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+ 	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
 </div>
 <!-- end #footer -->
 </body>

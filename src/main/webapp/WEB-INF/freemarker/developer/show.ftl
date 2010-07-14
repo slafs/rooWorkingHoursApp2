@@ -20,10 +20,14 @@
 <@spring.url value="/developer" var="list_developer_url"/>
 <@spring.message code="label.developers" var="label_developers"/>
 
+<span class="links">
 	<a href="${update_url}">${update_text}</a> |
-	 
+</span>
+
+<span class="links">	 
 	<a href="${list_developer_url}">
 		<@spring.message arguments="${label_developers}" code="global.menu.list"/>
 	</a>
+</span>
 
 </div>

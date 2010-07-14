@@ -15,7 +15,7 @@
 <#escape x as x?html>
 	<h3>${godziny.id}</h3>
 	<h4>${godziny.pracownik.username} -  ${godziny.pracownik.firstname} ${godziny.pracownik.surname}</h4>
-	<p>${godziny.whenWorked}</p>
+	<p>${godziny.whenWorked?date}</p>
 	<p>${entry} ${forwho} ${godziny.projekt.name}</p>
 	<p>${worked} <br />${hours}: ${godziny.hours},
 	${minutes}: ${godziny.minutes}</p>

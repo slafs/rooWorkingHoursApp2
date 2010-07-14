@@ -24,6 +24,19 @@
 			<@spring.message arguments="${label_godzinys}" code="global.menu.list"/>
 		</a></li>
 	</ul></li>
+	<li>
+		<h2>
+			<!-- godziny -->
+			<@spring.message code="menu.category.web_mvc_jsp_raport_category.label"/>
+		</h2><ul>
+		<li>
+		<@spring.url value="/raport" var="create_raport"/>
+		<a href="${create_raport}">
+			<!-- Stwórz raport -->
+			<@spring.message code="makeraport"/>
+		</a></li>
+		
+	</ul></li>
 </@sec.authorize>
 
 

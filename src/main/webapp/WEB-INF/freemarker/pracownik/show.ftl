@@ -30,10 +30,14 @@
 <@spring.url value="/pracownik" var="list_pracownik_url"/>
 <@spring.message code="label.pracowniks" var="label_pracowniks"/>
 
+<span class="links">
 	<a href="${update_url}">${update_text}</a> |
-	 
+</span>
+
+<span class="links">
 	<a href="${list_pracownik_url}">
 		<@spring.message arguments="${label_pracowniks}" code="global.menu.list"/>
 	</a>
+</span>
 
 </div>

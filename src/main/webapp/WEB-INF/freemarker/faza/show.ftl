@@ -14,10 +14,12 @@
 <@spring.url value="/faza" var="list_faza_url"/>
 <@spring.message code="label.fazas" var="label_fazas"/>
 
+<span class="links">
 	<a href="${update_url}">${update_text}</a> |
-	 
+</span> 
+<span class="links">
 	<a href="${list_faza_url}">
 		<@spring.message arguments="${label_fazas}" code="global.menu.list"/>
 	</a>
-
+</span>
 </div>

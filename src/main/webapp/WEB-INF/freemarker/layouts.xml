@@ -11,7 +11,8 @@
 		<put-attribute name="menu" value="/WEB-INF/freemarker/menu.ftl" />
 	</definition>
 	
-	<definition name="public" template="/WEB-INF/layouts/default.jspx" />
+<!--	<definition name="public" template="/WEB-INF/layouts/default.jspx" />-->
+	<definition name="public" template="/WEB-INF/freemarker/default.ftl" />
 	
 	<definition name="login" extends="default">
 		<put-attribute name="body" value="/WEB-INF/freemarker/login.ftl" />
