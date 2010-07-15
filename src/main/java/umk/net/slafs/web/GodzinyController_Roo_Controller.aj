@@ -32,7 +32,6 @@ privileged aspect GodzinyController_Roo_Controller {
         binder.setValidator(new GodzinyValidator());
     }
 
-	
     @RequestMapping(value = "/godziny", method = RequestMethod.POST)
     public String GodzinyController.create(@Valid Godziny godziny, BindingResult result, ModelMap modelMap) {
         if (godziny == null) throw new IllegalArgumentException("A godziny is required");
@@ -102,6 +101,9 @@ privileged aspect GodzinyController_Roo_Controller {
             return "godziny/update";
         }
         
+        if (!godziny.getPracownik().getId().equals(pracownik.getId())) {
+        	throw new IllegalArgumentException("You can't edit others entries");
+        }
         godziny.setPracownik(pracownik);
 
         godziny.merge();
