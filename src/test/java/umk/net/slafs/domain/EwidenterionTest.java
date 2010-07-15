@@ -7,7 +7,7 @@ import org.springframework.test.context.junit38.AbstractJUnit38SpringContextTest
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:/META-INF/spring/applicationContext.xml")
+@ContextConfiguration(locations = "classpath:/META-INF/spring/applicationTestContext.xml")
 public class EwidenterionTest extends AbstractJUnit38SpringContextTests {	
 	
 	@Test
